@@ -8,6 +8,7 @@ public class grenade : MonoBehaviour
     [Header("Explosion Prefabs")] 
     [SerializeField] private GameObject explosionEffectPrefab;
     [SerializeField] private Vector3 explosionParticleOffset;
+    [SerializeField] private GameObject audioSourcePrefab;
 
     [Header("Explosion Settings")] 
     [SerializeField] private float explosionDelay = 3f; 
@@ -15,13 +16,17 @@ public class grenade : MonoBehaviour
     [SerializeField] private float explosionRadius = 5f;
 
     [Header("Audio Effects")] 
+    [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private AudioClip impactSound;
     
     private float countDown;
     private bool hasExploded = false;
+    private AudioSource audioSource;
 
     private void Start()
     {
         countDown = explosionDelay;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -42,12 +47,23 @@ public class grenade : MonoBehaviour
         GameObject explosionEffect = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         
         Destroy(explosionEffect, 4f);
-        
-        //Play sfx
+
+        PlaySoundAtPosition(explosionSound);
         
         NearbyForceApply();
         
         Destroy(gameObject);
+    }
+
+    void PlaySoundAtPosition(AudioClip clip)
+    {
+        GameObject audioSourceObject = Instantiate(audioSourcePrefab, transform.position, Quaternion.identity);
+        AudioSource instantiatedAudioSource = audioSourceObject.GetComponent<AudioSource>();
+        instantiatedAudioSource.clip = clip;
+        instantiatedAudioSource.spatialBlend = 1; //c'est pour faire un son 3d incroyable j'apprend c'est fou
+        instantiatedAudioSource.Play();
+        
+        Destroy(audioSource, instantiatedAudioSource.clip.length);
     }
 
     void NearbyForceApply()
@@ -61,5 +77,12 @@ public class grenade : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius); //AddExplosionForce permet d'ajouter une force plus exact pour une explosion pas besoin de le simuler nous meme avec un addForce
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        audioSource.clip = impactSound;
+        audioSource.spatialBlend = 1;
+        audioSource.Play();
     }
 }

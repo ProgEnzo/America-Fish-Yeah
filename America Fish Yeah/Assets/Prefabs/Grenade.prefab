@@ -547,7 +547,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6620104704227726081}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f745ba5de167b6b428858058feb6e175, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -569,9 +569,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6620104704227726081}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 5
+  m_Drag: 0.05
+  m_AngularDrag: 500
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -611,7 +611,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -699,9 +699,13 @@ MonoBehaviour:
   explosionEffectPrefab: {fileID: 100010, guid: e0609132424a24844b1d53ad3d704fd9,
     type: 3}
   explosionParticleOffset: {x: 0, y: 0, z: 0}
+  audioSourcePrefab: {fileID: 2920953815934332262, guid: aa04463c81436b7469755db209a3b96d,
+    type: 3}
   explosionDelay: 3
   explosionForce: 700
   explosionRadius: 5
+  explosionSound: {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
+  impactSound: {fileID: 8300000, guid: 64baa1f44691afc42a584e482cd9a27d, type: 3}
 --- !u!1 &9124901321719007299
 GameObject:
   m_ObjectHideFlags: 0
