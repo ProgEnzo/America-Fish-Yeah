@@ -703,7 +703,8 @@ MonoBehaviour:
     type: 3}
   explosionDelay: 3
   explosionForce: 700
-  explosionRadius: 5
+  explosionRadius: 0.1
+  explosionDamage: 25
   explosionSound: {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
   impactSound: {fileID: 8300000, guid: 64baa1f44691afc42a584e482cd9a27d, type: 3}
 --- !u!1 &9124901321719007299

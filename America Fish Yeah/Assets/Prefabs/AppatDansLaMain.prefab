@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2621184000542056856
+--- !u!1 &7898958499578101190
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7231263612329766640}
-  - component: {fileID: 7808881934090598220}
-  - component: {fileID: 6835052888382087526}
-  - component: {fileID: 8108590051849909243}
-  - component: {fileID: 7851870664313925805}
-  - component: {fileID: 7173214912868273940}
-  - component: {fileID: 7798681920359224913}
-  m_Layer: 0
-  m_Name: FishV3
-  m_TagString: Untagged
+  - component: {fileID: 3816043196548536529}
+  - component: {fileID: 3581400227558531829}
+  - component: {fileID: 3761188930357936096}
+  - component: {fileID: 2523820620338413924}
+  - component: {fileID: 2841170296108324070}
+  - component: {fileID: 6138530061440418738}
+  m_Layer: 8
+  m_Name: AppatDansLaMain
+  m_TagString: Attractor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7231263612329766640
+--- !u!4 &3816043196548536529
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
+  m_GameObject: {fileID: 7898958499578101190}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.190002, y: 0.8389361, z: 115.009995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.306, y: -0.258, z: 0.585}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7808881934090598220
+--- !u!33 &3581400227558531829
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
-  m_Mesh: {fileID: 7834934524071737294, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
---- !u!23 &6835052888382087526
+  m_GameObject: {fileID: 7898958499578101190}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3761188930357936096
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
+  m_GameObject: {fileID: 7898958499578101190}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -65,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 284830dd46ce77c4696ef63853c7cf5e, type: 2}
+  - {fileID: 2100000, guid: fe86200c89ac1f44fb84557eb3ec7724, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,14 +86,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8108590051849909243
-MeshCollider:
+--- !u!135 &2523820620338413924
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
-  m_Material: {fileID: 0}
+  m_GameObject: {fileID: 7898958499578101190}
+  m_Material: {fileID: 13400000, guid: f745ba5de167b6b428858058feb6e175, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -105,65 +104,54 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7834934524071737294, guid: ae51ad94fa7d3764d957aa512d506d00, type: 3}
---- !u!114 &7851870664313925805
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2841170296108324070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
+  m_GameObject: {fileID: 7898958499578101190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7f5643eee801649ab7a8b4aeb10a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: e674f53dc17bef640acb03e18a7e73b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
---- !u!195 &7173214912868273940
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.48391256
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.08033351
-  m_BaseOffset: 0.040166754
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &7798681920359224913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621184000542056856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b42f49f0532796428785579b8e68d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attractor: {fileID: 2953555494019645318, guid: c945df64e6c1cd5488c95e47573359f0,
+  appatPrefab: {fileID: 2953555494019645318, guid: c945df64e6c1cd5488c95e47573359f0,
     type: 3}
-  groundLayer:
+  throwKey: 324
+  throwPosition: {fileID: 0}
+  throwDirection: {x: 0, y: 1, z: 0}
+  throwForce: 10
+  maxForce: 20
+  throwSound: {fileID: 0}
+  trajectoryLine: {fileID: 0}
+--- !u!54 &6138530061440418738
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898958499578101190}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
-  playerLayer:
+    m_Bits: 0
+  m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
-  range: 20
-  sightRange: 10
-  attractorInSight: 0
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

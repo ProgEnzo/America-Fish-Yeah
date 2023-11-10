@@ -59,4 +59,5 @@ public class fishAi : MonoBehaviour
     {
         agent.SetDestination(Attractor.transform.position);
     }
+    
 }

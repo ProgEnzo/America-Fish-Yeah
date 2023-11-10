@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b42f49f0532796428785579b8e68d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attractor: {fileID: 8200855695987515433, guid: 90275f46aa886324fa77b2464a002822,
+  Attractor: {fileID: 2953555494019645318, guid: c945df64e6c1cd5488c95e47573359f0,
     type: 3}
   groundLayer:
     serializedVersion: 2

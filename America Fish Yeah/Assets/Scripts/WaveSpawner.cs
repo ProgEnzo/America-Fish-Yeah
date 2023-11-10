@@ -57,6 +57,7 @@ public class WaveSpawner : MonoBehaviour
                 GameObject newFish = Instantiate(fishToSpawn[0], spawnLocation.position, Quaternion.identity);
                 fishToSpawn.RemoveAt(0);
                 fishSpawned.Add(newFish); //maintenant je dois le remove quand il meurt fdp
+                
                 spawnTimer = spawnInterval; //reset du spawnTimer
             }
             /*else 
@@ -110,6 +111,7 @@ public class WaveSpawner : MonoBehaviour
     public void GenerateFish() //permet de générer mes poissons
     {
         List<GameObject> generatedFish = new List<GameObject>();
+        
         while (waveValue > 0)
         {
             int randFishId = Random.Range(0, fish.Count);
