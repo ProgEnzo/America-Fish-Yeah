@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using Random = UnityEngine.Random;
 
 public class WaveSpawner : MonoBehaviour
@@ -37,7 +39,8 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
-        GenerateWave(); //lance la vague
+        //StartCoroutine(WaitForStart()); //genere la premiere vague apres 3 secondes
+        GenerateWave();
     }
 
     void FixedUpdate()
@@ -88,6 +91,8 @@ public class WaveSpawner : MonoBehaviour
     public void Loose()
     { 
         Debug.Log("t'as perdu"); //afficher l'écran de défaite
+
+        UiAnimEndGame.instance.OpenMenu(); //pour ouvrir le menu avec une anim
     }
 
     public void GenerateWave() //génére mes vagues
@@ -123,6 +128,12 @@ public class WaveSpawner : MonoBehaviour
         fishToSpawn.Clear();
         fishToSpawn = generatedFish;
     }
+
+    /*private IEnumerator WaitForStart()
+    {
+        yield return new WaitForSeconds(3f);
+        GenerateWave();
+    }*/
 }
 
 [System.Serializable]
