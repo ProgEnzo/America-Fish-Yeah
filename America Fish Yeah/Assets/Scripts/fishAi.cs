@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class fishAi : MonoBehaviour
 {
-    private GameObject player;
+    private GameObject player; //osef
     public GameObject Attractor;
 
     private NavMeshAgent agent;
@@ -24,13 +24,13 @@ public class fishAi : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player");
-        Attractor = GameObject.Find("Attractor");
     }
 
     void Update()
     {
+        Attractor = GameObject.Find("Attractor"); //comment le récupérer des que je le lance ???????
+
         attractorInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
-        
         if(!attractorInSight) Patrol();
         if(attractorInSight) Attracted();
     }
