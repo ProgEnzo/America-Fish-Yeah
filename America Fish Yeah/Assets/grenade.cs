@@ -48,6 +48,8 @@ public class grenade : MonoBehaviour
         GameObject explosionEffect = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         
         Destroy(explosionEffect, 4f);
+        
+        CameraShake.Shake(0.5f, 0.5f);
 
         PlaySoundAtPosition(explosionSound);
         
