@@ -18,9 +18,14 @@ public class gun : MonoBehaviour
 
     public Recoil Recoil_Script;
 
+    //[SerializeField] private AudioClip shootingSound;
+    //[SerializeField] private AudioClip impactSound; ==> trop de detail
+    private AudioSource audioSource;
+
     public void Start()
     {
        // Recoil_Script = transform.Find("CameraRecoil").GetComponent<Recoil>();
+       audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,6 +34,10 @@ public class gun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+            
+            //audioSource.clip = shootingSound;
+            //audioSource.spatialBlend = 1;
+            audioSource.PlayOneShot(audioSource.clip);
         }
 
         if (Input.GetButtonUp("Fire1"))

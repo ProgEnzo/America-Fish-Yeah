@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 284830dd46ce77c4696ef63853c7cf5e, type: 2}
+  - {fileID: 2100000, guid: 7f17724765d890848a499372b3e42ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ea01147fbb4bf4db1bb4625e802b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tpPos: {fileID: 0}
 --- !u!96 &-8107897579293211869
 TrailRenderer:
   serializedVersion: 3
@@ -183,7 +184,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7f17724765d890848a499372b3e42ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

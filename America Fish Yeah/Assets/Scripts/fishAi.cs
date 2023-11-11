@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class fishAi : MonoBehaviour
 {
-    private GameObject player; //osef
+    public GameObject player; 
     public GameObject Attractor;
 
     private NavMeshAgent agent;
@@ -15,6 +15,9 @@ public class fishAi : MonoBehaviour
 
     private Vector3 destPoint;
     private bool walkPointSet;
+    public float enemyDistanceRun = 4f;
+
+    
     [SerializeField] private float range;
 
     [SerializeField] private float sightRange;
@@ -23,26 +26,45 @@ public class fishAi : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        //Attractor = GameObject.FindGameObjectWithTag("Attractor"); //comment faire ptn !!!!!!
     }
 
     void Update()
     {
-        Attractor = GameObject.Find("Attractor"); //comment le récupérer des que je le lance ???????
-
         attractorInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
-        if(!attractorInSight) Patrol();
-        if(attractorInSight) Attracted();
+
+        if (!attractorInSight)
+        {
+            Patrol();
+        }
+        if (attractorInSight)
+        {
+            Attracted();
+        }
+        
+        Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
     }
 
-    void Patrol()
+    void Patrol() //Patrouille avec des déplacements random
     {
-        if (!walkPointSet) SearchForDest();
-        if (walkPointSet) agent.SetDestination(destPoint);
-        if (Vector3.Distance(transform.position, destPoint) < 10) walkPointSet = false;
+        if (!walkPointSet)
+        {
+            SearchForDest();
+        }
+
+        if (walkPointSet)
+        {
+            agent.SetDestination(destPoint);
+        }
+
+        if (Vector3.Distance(transform.position, destPoint) < 10)
+        {
+            walkPointSet = false;
+        }
     }
 
-    void SearchForDest()
+    void SearchForDest() //recherche des nouveaux points vers lesquels se déplacer
     {
         float z = Random.Range(-range, range);
         float x = Random.Range(-range, range);
@@ -55,9 +77,23 @@ public class fishAi : MonoBehaviour
         }
     }
 
-    void Attracted()
+    void Attracted() //Attirer par l'appat ==> TROUVER UNE SOLUTION AU PLUS VITE
     {
         agent.SetDestination(Attractor.transform.position);
+    }
+
+    void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
+    {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distance < enemyDistanceRun)
+        {
+            Vector3 dirToPlayer = transform.position - player.transform.position;
+
+            Vector3 newPos = dirToPlayer.normalized; //newPos = dirToPlayer.normalized;
+
+            agent.SetDestination(newPos);
+        }
     }
     
 }

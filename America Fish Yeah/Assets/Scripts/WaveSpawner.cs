@@ -12,7 +12,8 @@ public class WaveSpawner : MonoBehaviour
 {
     public List<Fish> fish = new List<Fish>();
     public List<GameObject> fishToSpawn = new List<GameObject>(); //poissons qui douivent apparaitre
-    public List<GameObject> fishSpawned = new List<GameObject>();
+    public List<GameObject> fishSpawned = new List<GameObject>(); 
+    public Transform[] spawnPoints; //points de spawn pour le random
     public int currentWave; //id de la vague
     public int waveValue; //valeur de spawn de la vague
 
@@ -54,7 +55,9 @@ public class WaveSpawner : MonoBehaviour
         {
             if (fishToSpawn.Count > 0)
             {
-                GameObject newFish = Instantiate(fishToSpawn[0], spawnLocation.position, Quaternion.identity);
+                Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                
+                GameObject newFish = Instantiate(fishToSpawn[0], randomPoint.position, Quaternion.identity);
                 fishToSpawn.RemoveAt(0);
                 fishSpawned.Add(newFish); //maintenant je dois le remove quand il meurt fdp
                 

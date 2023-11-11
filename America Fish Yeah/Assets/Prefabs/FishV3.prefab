@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 47.190002, y: 0.8389361, z: 115.009995}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 284830dd46ce77c4696ef63853c7cf5e, type: 2}
+  - {fileID: 2100000, guid: 439697db5d574294cbcf983d4caeaffd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b42f49f0532796428785579b8e68d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   Attractor: {fileID: 2953555494019645318, guid: c945df64e6c1cd5488c95e47573359f0,
     type: 3}
   groundLayer:
@@ -143,6 +144,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  enemyDistanceRun: 4
   range: 20
   sightRange: 10
   attractorInSight: 0

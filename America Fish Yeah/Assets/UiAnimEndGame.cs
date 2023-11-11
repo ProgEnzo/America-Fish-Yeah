@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UiAnimEndGame : MonoBehaviour
@@ -8,7 +10,10 @@ public class UiAnimEndGame : MonoBehaviour
     
     public Animator anim;
     private bool menuOpen = false;
-    public GameObject endGameMenu;
+    //public GameObject endGameMenu;
+    
+    //public TextMeshProUGUI waveNumber;
+    //public TextMeshProUGUI score;
 
     private void Awake()
     {
@@ -22,9 +27,16 @@ public class UiAnimEndGame : MonoBehaviour
         }
     }
 
+    /*private void Start()
+    {
+        score = ScoreManager.instance.scoreText;
+        waveNumber = WaveSpawner.instance.waveNumber;
+    }*/
+
     public void OpenMenu()
     {
         anim.SetBool("isEndGame", true);
+        //waveNumber.text = ()
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
