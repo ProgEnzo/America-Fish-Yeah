@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   loot: {fileID: 5564626536919410418, guid: b548ec7b6fbe4774fb6f51efbe7367cd, type: 3}
+  vfxDie: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
 --- !u!195 &5741087769299399744
 NavMeshAgent:
   m_ObjectHideFlags: 0
