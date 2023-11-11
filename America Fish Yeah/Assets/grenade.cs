@@ -75,6 +75,8 @@ public class grenade : MonoBehaviour
         
         foreach (Collider nearbyObject in colliders)
         {
+            //target.instance.TakeDamage(50f);
+            
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
@@ -90,4 +92,12 @@ public class grenade : MonoBehaviour
         audioSource.spatialBlend = 1;
         audioSource.Play();
     }
+
+    /*private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Fish"))
+        {
+            //TakeDamage dans target.cs
+        }
+    }*/
 }

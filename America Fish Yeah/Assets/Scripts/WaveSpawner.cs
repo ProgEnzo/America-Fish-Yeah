@@ -106,7 +106,7 @@ public class WaveSpawner : MonoBehaviour
         
         spawnInterval = waveDuration / fishToSpawn.Count; //ca pôse probleme ca je pense
         //spawnInterval = 1f; //pour tester
-        waveDuration = currentWave * 10; //set le timer sur la durée de la vague
+        waveDuration = currentWave * 10 + 10; //set le timer sur la durée de la vague
         waveTimer = waveDuration;
         //waveTimer = waveDuration;
     }

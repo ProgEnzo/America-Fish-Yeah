@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 1551393697729725762}
   - component: {fileID: 5544158068760773785}
   - component: {fileID: 285895851488161322}
+  - component: {fileID: 4754823751996431461}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -707,6 +708,27 @@ MonoBehaviour:
   explosionDamage: 25
   explosionSound: {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
   impactSound: {fileID: 8300000, guid: 64baa1f44691afc42a584e482cd9a27d, type: 3}
+--- !u!135 &4754823751996431461
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620104704227726081}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.4752095
+  m_Center: {x: 0, y: 0, z: 0.05863905}
 --- !u!1 &9124901321719007299
 GameObject:
   m_ObjectHideFlags: 0
