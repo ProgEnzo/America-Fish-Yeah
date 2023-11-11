@@ -6,6 +6,11 @@ TagManager:
   tags:
   - FxTemporaire
   - Attractor
+  - Loot
+  - Panier
+  - LootDetector
+  - WallCollider
+  - tpPos
   layers:
   - Default
   - TransparentFX

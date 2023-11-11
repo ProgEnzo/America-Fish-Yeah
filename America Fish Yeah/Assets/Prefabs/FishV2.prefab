@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7652917430983116121}
   - component: {fileID: 6484645349027630025}
   - component: {fileID: 3867124439569910993}
-  - component: {fileID: 8297930386903746071}
   - component: {fileID: 1860535459666987403}
   - component: {fileID: 3440614288575569513}
   - component: {fileID: 5327914949737570959}
+  - component: {fileID: 1158011914785460662}
   m_Layer: 0
   m_Name: FishV2
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 45.99, y: 0.958936, z: 105.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8297930386903746071
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9119165803119543492}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3100006622114138374, guid: a8fd0d08c30426d4c978a4998752cf7d, type: 3}
 --- !u!114 &1860535459666987403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  loot: {fileID: 9119165803119543492, guid: 3ac0965218e9d8040949ca76e9c1ea34, type: 3}
 --- !u!195 &3440614288575569513
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -167,3 +146,24 @@ MonoBehaviour:
   range: 20
   sightRange: 10
   attractorInSight: 0
+--- !u!65 &1158011914785460662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119165803119543492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0581443, y: 0.44991267, z: 0.38998923}
+  m_Center: {x: -0.011717817, y: -0.012036344, z: 0.024950664}

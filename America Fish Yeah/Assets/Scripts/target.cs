@@ -1,9 +1,11 @@
 
+using Unity.Mathematics;
 using UnityEngine;
 
 public class target : MonoBehaviour
 {
    public float health = 50f;
+   public GameObject loot;
 
    public void TakeDamage(float amount)
    {
@@ -18,6 +20,7 @@ public class target : MonoBehaviour
    void Die()
    {
       WaveSpawner.instance.fishSpawned.Remove(this.gameObject);
+      Instantiate(loot, transform.position, quaternion.identity);
       Destroy(gameObject);
    }
 }

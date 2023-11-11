@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6590340690222902017}
   - component: {fileID: 7654957702493767715}
   - component: {fileID: 8427877287409940929}
-  - component: {fileID: 4778917867273367810}
   - component: {fileID: 6600822060987139826}
   - component: {fileID: 5274256291108570274}
   - component: {fileID: 24531148098200797}
+  - component: {fileID: -5386335428744017285}
   m_Layer: 0
   m_Name: SharkV1
   m_TagString: Untagged
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4778917867273367810
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591512780427278541}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4108424097152807243, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
 --- !u!114 &6600822060987139826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  loot: {fileID: 1591512780427278541, guid: 3f1d7c3c3f9f3464eb6be3c6ea0d79fa, type: 3}
 --- !u!195 &5274256291108570274
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -140,7 +119,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.4622262
+  m_Height: 15
   m_BaseOffset: 1.2311131
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -167,3 +146,24 @@ MonoBehaviour:
   range: 30
   sightRange: 15
   attractorInSight: 0
+--- !u!65 &-5386335428744017285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591512780427278541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.869073, y: 1.8705171, z: 2.403439}
+  m_Center: {x: -0.020836351, y: 0.29585546, z: -0.0000038165604}
