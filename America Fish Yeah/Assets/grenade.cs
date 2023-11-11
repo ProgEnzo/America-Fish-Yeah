@@ -75,7 +75,13 @@ public class grenade : MonoBehaviour
         
         foreach (Collider nearbyObject in colliders)
         {
-            //target.instance.TakeDamage(50f);
+            //.targetinstance.TakeDamage(50f);
+            target target = nearbyObject.transform.GetComponent<target>(); //on test pas opti mais ca fonctionne
+
+            if (target != null)
+            {
+                target.TakeDamage(explosionDamage);
+            }
             
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)

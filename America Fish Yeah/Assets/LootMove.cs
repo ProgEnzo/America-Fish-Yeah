@@ -29,6 +29,7 @@ public class LootMove : MonoBehaviour
             //Instantiate(dropLoot, tpPos.transform.position, quaternion.identity);
             gameObject.transform.position = tpPos.transform.position;
             ScoreManager.instance.AddPoint();
+            ScoreAffichage.instance.AddPoint();
         }
     }
 }

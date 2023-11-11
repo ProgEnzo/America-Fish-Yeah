@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous avez \"p\xEAch\xE9\" : \"score\" + poissons"
+  m_text: "Vous avez \"p\xEAch\xE9\" : 17 poissons"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5f446899b3d50445923fcd498a000a4, type: 2}
   m_sharedMaterial: {fileID: -4636705327372861709, guid: b5f446899b3d50445923fcd498a000a4,
@@ -3088,6 +3088,7 @@ GameObject:
   - component: {fileID: 893354544}
   - component: {fileID: 893354543}
   - component: {fileID: 893354542}
+  - component: {fileID: 893354546}
   m_Layer: 5
   m_Name: End
   m_TagString: Untagged
@@ -3189,6 +3190,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893354540}
   m_CullTransparentMesh: 1
+--- !u!114 &893354546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893354540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db73d1506ab457748b3cb94e55dfe95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToGive: 1
+  scoreText: {fileID: 101382726}
+  waveNumber: {fileID: 1212159592}
 --- !u!1001 &915503309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4094,6 +4110,7 @@ GameObject:
   - component: {fileID: 1132763657}
   - component: {fileID: 1132763659}
   - component: {fileID: 1132763658}
+  - component: {fileID: 1132763660}
   m_Layer: 6
   m_Name: Terrain_0_0_a6b6280d-a782-48b2-858e-0c2acc2b4d60
   m_TagString: Untagged
@@ -4175,6 +4192,28 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
+--- !u!64 &1132763660
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132763656}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1132842875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4541,7 +4580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Vous avez atteint la manche : "waveNumber"'
+  m_text: 'Vous avez atteint la manche : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5f446899b3d50445923fcd498a000a4, type: 2}
   m_sharedMaterial: {fileID: -4636705327372861709, guid: b5f446899b3d50445923fcd498a000a4,
@@ -7362,7 +7401,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1f21abc91ff76c745894a376f907ee3b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 6d8d71c86c854f04580a1b1710860985, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &1828525302
 MeshCollider:

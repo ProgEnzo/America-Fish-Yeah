@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -32,6 +29,8 @@ public class fishAi : MonoBehaviour
 
     void Update()
     {
+        Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
+        
         attractorInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
 
         if (!attractorInSight)
@@ -42,8 +41,6 @@ public class fishAi : MonoBehaviour
         {
             Attracted();
         }
-        
-        Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
     }
 
     void Patrol() //Patrouille avec des déplacements random
@@ -92,7 +89,7 @@ public class fishAi : MonoBehaviour
 
             Vector3 newPos = dirToPlayer.normalized; //newPos = dirToPlayer.normalized;
 
-            agent.SetDestination(newPos);
+            agent.SetDestination(newPos); //permet de définir une nouvelle dest au navmesh agent
         }
     }
     
