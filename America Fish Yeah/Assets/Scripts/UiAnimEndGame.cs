@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class UiAnimEndGame : MonoBehaviour
@@ -9,7 +5,7 @@ public class UiAnimEndGame : MonoBehaviour
     public static UiAnimEndGame instance;
     
     public Animator anim;
-    private bool menuOpen = false;
+    [SerializeField] private bool menuOpen = false;
     //public GameObject endGameMenu;
     
     //public TextMeshProUGUI waveNumber;
@@ -27,6 +23,20 @@ public class UiAnimEndGame : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (menuOpen)
+        {
+            Debug.Log("Le menu est ouvert");
+            Time.timeScale = 0; //Je ne sais pas pourquoi ca ne fonctionne pas ?
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     /*private void Start()
     {
         score = ScoreManager.instance.scoreText;
@@ -35,10 +45,11 @@ public class UiAnimEndGame : MonoBehaviour
 
     public void OpenMenu()
     {
+        menuOpen = true;
         anim.SetBool("isEndGame", true);
         //waveNumber.text = ()
+        //Time.timeScale = 0;
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseMenu()

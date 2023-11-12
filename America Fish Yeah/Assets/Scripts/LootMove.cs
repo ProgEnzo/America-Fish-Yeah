@@ -10,10 +10,13 @@ public class LootMove : MonoBehaviour
     public Transform tpPos;
     //public GameObject dropLoot;
 
+    private AudioSource audio;
+
     private void Start()
     {
         lootScript = gameObject.GetComponent<Loot>();
         tpPos = GameObject.FindGameObjectWithTag("tpPos").transform;
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,6 +33,7 @@ public class LootMove : MonoBehaviour
             gameObject.transform.position = tpPos.transform.position;
             ScoreManager.instance.AddPoint();
             ScoreAffichage.instance.AddPoint();
+            audio.PlayOneShot(audio.clip);
         }
     }
 }
