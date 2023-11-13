@@ -5,11 +5,7 @@ public class UiAnimEndGame : MonoBehaviour
     public static UiAnimEndGame instance;
     
     public Animator anim;
-    [SerializeField] private bool menuOpen = false;
-    //public GameObject endGameMenu;
-    
-    //public TextMeshProUGUI waveNumber;
-    //public TextMeshProUGUI score;
+    [SerializeField] public bool menuOpen = false;
 
     private void Awake()
     {
@@ -25,10 +21,10 @@ public class UiAnimEndGame : MonoBehaviour
 
     private void Update()
     {
-        if (menuOpen)
+        if (menuOpen == true)
         {
-            Debug.Log("Le menu est ouvert");
             Time.timeScale = 0; //Je ne sais pas pourquoi ca ne fonctionne pas ?
+            Debug.Log("Le menu est ouvert");
             Cursor.lockState = CursorLockMode.Confined;
         }
         else
@@ -36,12 +32,6 @@ public class UiAnimEndGame : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-
-    /*private void Start()
-    {
-        score = ScoreManager.instance.scoreText;
-        waveNumber = WaveSpawner.instance.waveNumber;
-    }*/
 
     public void OpenMenu()
     {

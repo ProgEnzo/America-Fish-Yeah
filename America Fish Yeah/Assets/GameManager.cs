@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,6 +37,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PauseMenu();
+        EndMenu();
         
         if (isGamePaused)
         {
@@ -58,6 +56,15 @@ public class GameManager : MonoBehaviour
         {
             isGamePaused = true;
             UiAnimPause.instance.OpenMenu();
+        }
+    }
+
+    public void EndMenu()
+    {
+        if (UiAnimEndGame.instance.menuOpen)
+        {
+            isGamePaused = true;
+            UiAnimEndGame.instance.OpenMenu();
         }
     }
 

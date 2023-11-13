@@ -1,5 +1,8 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class fishAi : MonoBehaviour
 {
@@ -23,8 +26,7 @@ public class fishAi : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        //player = GameObject.FindGameObjectWithTag("Player");
-        //Attractor = GameObject.FindGameObjectWithTag("Attractor"); //comment faire ptn !!!!!!
+        player = GameObject.FindGameObjectWithTag("Player"); //pas opti du tout
     }
 
     void Update()
@@ -35,11 +37,20 @@ public class fishAi : MonoBehaviour
 
         if (!attractorInSight)
         {
-            Patrol();
+            Patrol(); //le pb vient de là, ils ne vont pas flees à cause de ca
         }
+        
         if (attractorInSight)
         {
             Attracted();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Flees();
         }
     }
 
@@ -79,7 +90,7 @@ public class fishAi : MonoBehaviour
         agent.SetDestination(Appat.instance.gameObject.transform.position);
     }
 
-    /*void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
+    void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
         
@@ -94,6 +105,8 @@ public class fishAi : MonoBehaviour
 
             agent.SetDestination(newPos); //permet de définir une nouvelle dest au navmesh agent
         }
-    }*/
+        
+        
+    }
     
 }

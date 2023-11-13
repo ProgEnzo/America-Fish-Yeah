@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5274256291108570274}
   - component: {fileID: 24531148098200797}
   - component: {fileID: -5386335428744017285}
+  - component: {fileID: 3242387190650919758}
   m_Layer: 0
   m_Name: SharkV1
   m_TagString: Untagged
@@ -169,4 +170,25 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 5.869073, y: 1.8705171, z: 2.403439}
+  m_Center: {x: -0.020836351, y: 0.29585546, z: -0.0000038165604}
+--- !u!135 &3242387190650919758
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591512780427278541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.9345365
   m_Center: {x: -0.020836351, y: 0.29585546, z: -0.0000038165604}
