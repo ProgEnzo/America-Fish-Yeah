@@ -143,10 +143,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  playerLayer:
+  appatLayer:
     serializedVersion: 2
-    m_Bits: 256
-  enemyDistanceRun: 4
+    m_Bits: 1024
+  enemyDistanceRun: 12
   range: 30
   sightRange: 15
   attractorInSight: 0

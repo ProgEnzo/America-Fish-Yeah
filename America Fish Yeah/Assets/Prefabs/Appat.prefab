@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8710214003160317219}
   - component: {fileID: 5740630971420575745}
   - component: {fileID: 4639013172166983913}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Appat
   m_TagString: Attractor
   m_Icon: {fileID: 0}

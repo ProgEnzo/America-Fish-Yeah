@@ -11,11 +11,13 @@ public class fishAi : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    [SerializeField] private LayerMask groundLayer, playerLayer;
+    [SerializeField] private LayerMask groundLayer, appatLayer;
 
     private Vector3 destPoint;
     private bool walkPointSet;
-    public float enemyDistanceRun = 15f;
+    public float enemyDistanceRun = 5f;
+
+    private bool isFleeing;
 
     
     [SerializeField] private float range;
@@ -31,26 +33,21 @@ public class fishAi : MonoBehaviour
 
     void Update()
     {
-        //Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
-        
-        attractorInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
+        Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
 
-        if (!attractorInSight)
+        if (!isFleeing)
         {
-            Patrol(); //le pb vient de là, ils ne vont pas flees à cause de ca
-        }
-        
-        if (attractorInSight)
-        {
-            Attracted();
-        }
-    }
+            attractorInSight = Physics.CheckSphere(transform.position, sightRange, appatLayer);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Flees();
+            if (!attractorInSight)
+            {
+                Patrol(); //le pb vient de là, ils ne vont pas flees à cause de ca
+            }
+        
+            if (attractorInSight)
+            {
+                Attracted();
+            }
         }
     }
 
@@ -87,26 +84,30 @@ public class fishAi : MonoBehaviour
 
     void Attracted() //Attirer par l'appat ==> TROUVER UNE SOLUTION AU PLUS VITE
     {
-        agent.SetDestination(Appat.instance.gameObject.transform.position);
+        agent.SetDestination(Appat.instance.gameObject.transform.position); //? nullref
     }
 
     void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
         
-        Debug.Log(distance + " "+ enemyDistanceRun);
+        //Debug.Log(distance + " "+ enemyDistanceRun);
 
         if (distance < enemyDistanceRun)
         {
+            isFleeing = true;
+            
             Debug.Log("0");
             Vector3 dirToPlayer = transform.position - player.transform.position;
 
-            Vector3 newPos = dirToPlayer.normalized; //newPos = dirToPlayer.normalized;
+            Vector3 newPos = transform.position + dirToPlayer; //newPos = dirToPlayer.normalized;
 
             agent.SetDestination(newPos); //permet de définir une nouvelle dest au navmesh agent
         }
-        
-        
+        else
+        {
+            isFleeing = false;
+        }
     }
     
 }
