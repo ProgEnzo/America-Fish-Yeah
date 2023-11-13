@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class mouseLock : MonoBehaviour
 {
-    public float mouseSensitivity = 1000f;
+    public float mouseSensitivity = 600f;
     public Transform playerBody;
 
     private float xRotation = 0f;

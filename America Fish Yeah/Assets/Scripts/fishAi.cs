@@ -12,7 +12,7 @@ public class fishAi : MonoBehaviour
 
     private Vector3 destPoint;
     private bool walkPointSet;
-    public float enemyDistanceRun = 4f;
+    public float enemyDistanceRun = 15f;
 
     
     [SerializeField] private float range;
@@ -23,13 +23,13 @@ public class fishAi : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         //Attractor = GameObject.FindGameObjectWithTag("Attractor"); //comment faire ptn !!!!!!
     }
 
     void Update()
     {
-        Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
+        //Flees(); //les poissons fuit le joueur toujours en prio au dessus d'etre attiré
         
         attractorInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
 
@@ -76,21 +76,24 @@ public class fishAi : MonoBehaviour
 
     void Attracted() //Attirer par l'appat ==> TROUVER UNE SOLUTION AU PLUS VITE
     {
-        agent.SetDestination(Attractor.transform.position);
+        agent.SetDestination(Appat.instance.gameObject.transform.position);
     }
 
-    void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
+    /*void Flees() //Fuite des poissons face au joueur ==> ne fonctionne pas et je ne comprend pas du tout pq //faire un triggerEnter sur une sphere = plus opti
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
+        
+        Debug.Log(distance + " "+ enemyDistanceRun);
 
         if (distance < enemyDistanceRun)
         {
+            Debug.Log("0");
             Vector3 dirToPlayer = transform.position - player.transform.position;
 
             Vector3 newPos = dirToPlayer.normalized; //newPos = dirToPlayer.normalized;
 
             agent.SetDestination(newPos); //permet de définir une nouvelle dest au navmesh agent
         }
-    }
+    }*/
     
 }

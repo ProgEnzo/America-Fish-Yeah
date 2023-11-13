@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1981519353020485846}
   - component: {fileID: 8710214003160317219}
   - component: {fileID: 5740630971420575745}
+  - component: {fileID: 4639013172166983913}
   m_Layer: 8
   m_Name: Appat
   m_TagString: Attractor
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe86200c89ac1f44fb84557eb3ec7724, type: 2}
+  - {fileID: 2100000, guid: c6f75a3492455bc409ea91a89e912f2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +93,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2953555494019645318}
-  m_Material: {fileID: 13400000, guid: f745ba5de167b6b428858058feb6e175, type: 2}
+  m_Material: {fileID: 13400000, guid: f4328026898147346b6b14a19d87bc8a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -133,3 +134,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4639013172166983913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953555494019645318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4faa8c1899c68e74892ac9545b447547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -22,6 +22,7 @@ public class GrenadeThrower : MonoBehaviour
 
     [SerializeField] private LineRenderer trajectoryLine;
 
+
     private bool isCharging = false;
     private float chargeTime = 0f;
     private Camera mainCamera;

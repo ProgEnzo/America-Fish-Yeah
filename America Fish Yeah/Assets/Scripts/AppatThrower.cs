@@ -78,14 +78,16 @@ public class AppatThrower : MonoBehaviour
     {
         Vector3 spawnPosition = throwPosition.position; // + mainCam.transform.rotation ?
 
-        GameObject grenade = Instantiate(appatPrefab, spawnPosition, quaternion.identity); //anciennement mainCam.Transform.Rotation
+        GameObject appat = Instantiate(appatPrefab, spawnPosition, quaternion.identity); //anciennement mainCam.Transform.Rotation
 
-        Rigidbody rb = grenade.GetComponent<Rigidbody>();
+        Rigidbody rb = appat.GetComponent<Rigidbody>();
 
         Vector3 finalThrowDirection = (mainCamera.transform.forward + throwDirection).normalized;
         rb.AddForce(finalThrowDirection * force, ForceMode.VelocityChange);
         
         GrenadeAudioManager.instance.PlayOneShot(throwSound, 0.5f);
+        
+        Destroy(appat, 7f);
     }
 
     void ShowTrajectory(Vector3 origin, Vector3 speed)

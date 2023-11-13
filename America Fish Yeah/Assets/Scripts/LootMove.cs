@@ -34,6 +34,7 @@ public class LootMove : MonoBehaviour
             ScoreManager.instance.AddPoint();
             ScoreAffichage.instance.AddPoint();
             audio.PlayOneShot(audio.clip);
+            Destroy(audio, 2f);
         }
     }
 }

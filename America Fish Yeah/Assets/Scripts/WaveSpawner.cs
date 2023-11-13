@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -76,6 +77,18 @@ public class WaveSpawner : MonoBehaviour
         if (waveTimer <= 0 && fishSpawned.Count > 0)
         {
             Loose();
+        }
+
+        if (waveTimer <= 5f)
+        {
+            timerText.transform.DOScale(1.25f, 2f);
+            //timerText.DOFade(255, 5f);
+            timerText.DOColor(Color.red, 5f);
+        }
+        else
+        {
+            timerText.transform.DOScale(1f, 5f);
+            timerText.DOColor(Color.white, 5f);
         }
     }
 
