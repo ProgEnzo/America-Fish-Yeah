@@ -133,7 +133,7 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 0.95
+    m_Value: 0.96
   aperture:
     m_OverrideState: 1
     m_Value: 5.4
@@ -170,7 +170,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.07
   clamp:
     m_OverrideState: 1
     m_Value: 0.05
@@ -254,7 +254,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.2
   response:
     m_OverrideState: 1
     m_Value: 0.8
@@ -276,7 +276,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.15
 --- !u!114 &8790346218654252810
 MonoBehaviour:
   m_ObjectHideFlags: 3

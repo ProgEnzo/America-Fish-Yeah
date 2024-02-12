@@ -10,7 +10,8 @@ public class WaveSpawner : MonoBehaviour
     public List<GameObject> fishToSpawn = new List<GameObject>(); //poissons qui douivent apparaitre
     public List<GameObject> fishSpawned = new List<GameObject>(); 
     public Transform[] spawnPoints; //points de spawn pour le random
-    public int currentWave; //id de la vague
+    
+    public int currentWave; 
     public int waveValue; //valeur de spawn de la vague
 
     public Transform spawnLocation; //spawn point des poissons
@@ -23,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
     public int waveTimerInt;
 
     public TextMeshProUGUI waveNumber;
+
+    public int equilibrageModifier = 5;
 
     public static WaveSpawner instance;
 
@@ -96,6 +99,7 @@ public class WaveSpawner : MonoBehaviour
     { 
         waveNumber.text = (currentWave + "");
         currentWave += 1;
+        //waveValue = (currentWave * 10) + equilibrageModifier;//trouver une formule pour l'équilibrage
         //waveDuration = currentWave * 10; 
         GenerateWave();
     }
@@ -107,16 +111,15 @@ public class WaveSpawner : MonoBehaviour
         UiAnimEndGame.instance.OpenMenu(); //pour ouvrir le menu avec une anim
     }
 
-    public void GenerateWave() //génére mes vagues
+    public void GenerateWave() 
     {
-        waveValue = currentWave * 10; //calcul de la valeur en poissons de la vague en fonction de leur cout
+        waveValue = currentWave * 15; //calcul de la valeur en poissons de la vague en fonction de leur cout
         GenerateFish();
         
-        spawnInterval = waveDuration / fishToSpawn.Count; //ca pôse probleme ca je pense
-        //spawnInterval = 1f; //pour tester
-        waveDuration = currentWave * 10 + 10; //set le timer sur la durée de la vague
+        spawnInterval = waveDuration / fishToSpawn.Count; 
+        
+        waveDuration = (currentWave * 10) + equilibrageModifier; //set le timer sur la durée de la vague
         waveTimer = waveDuration;
-        //waveTimer = waveDuration;
     }
 
     public void GenerateFish() //permet de générer mes poissons
